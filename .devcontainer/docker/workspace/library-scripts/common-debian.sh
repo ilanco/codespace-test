@@ -140,6 +140,8 @@ if [ "${LOCALE_ALREADY_SET}" != "true" ] && ! grep -o -E '^\s*en_US.UTF-8\s+UTF-
     LOCALE_ALREADY_SET="true"
 fi
 
+echo "existing user :$(id -u vscode)"
+
 # Create or update a non-root user to match UID/GID.
 if id -u ${USERNAME} > /dev/null 2>&1; then
     # User exists, update if needed
