@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+
+  workspace:
+    build:
+      context: ./docker/workspace
+      dockerfile: Dockerfile
+      args:
+        - PHP_VERSION=${PHP_VERSION}
+        - USERNAME="vscode"
+        - USER_UID=1000
+        - USER_GID=1000
+        - INSTALL_ZSH="false"
+    env_file: ../.env
+    ports:
+      - "80:80"
+      - "443:443"
+      - "3000:3000"
+      - "3306:3306"
+      - "5432:5432"
+      - "6379:6379"
+      - "8080:8080"
+    init: true
+    volumes:
+      # Forwards the local Docker socket to the container.
+      - /var/run/docker.sock:/var/run/docker-host.sock 
+      - ../:/var/www
+      - ./docker/workspace/config/php.ini:/etc/php/7.4/cli/conf.d/99-php.ini
+    working_dir: /var/www
+    entrypoint: /usr/local/share/docker-init.sh
+    command: sleep infinity
