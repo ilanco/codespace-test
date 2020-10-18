@@ -7,7 +7,7 @@ services:
       context: ./docker/workspace
       dockerfile: Dockerfile
       args:
-        - PHP_VERSION=${PHP_VERSION}
+        - PHP_VERSION
         - USERNAME="vscode"
         - USER_UID=1000
         - USER_GID=1000
