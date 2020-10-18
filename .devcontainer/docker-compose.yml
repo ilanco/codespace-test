@@ -4,7 +4,7 @@ services:
 
   workspace:
     build:
-      context: .devcontainer/docker/workspace
+      context: docker/workspace
       dockerfile: Dockerfile
       args:
         - PHP_VERSION
@@ -20,8 +20,7 @@ services:
       - "5432:5432"
       - "6379:6379"
       - "8080:8080"
-    environment:
-      - PHP_VERSION=${PHP_VERSION}
+    env_file: ../.env
     init: true
     volumes:
       # Forwards the local Docker socket to the container.
