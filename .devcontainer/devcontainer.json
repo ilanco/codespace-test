@@ -14,7 +14,8 @@
 	
 	"containerEnv": {
 		"MY_CONTAINER_VAR": "some-value-here",
-		"MY_CONTAINER_VAR2": "${localEnv:localWorkspaceFolder}"
+		"MY_CONTAINER_VAR2": "${localEnv:localWorkspaceFolder}",
+		"MY_CONTAINER_VAR3": "${localWorkspaceFolder}"
 	},
 	"remoteEnv": {
 		"PATH": "${containerEnv:localWorkspaceFolder}:/some/other/path",
