@@ -1,4 +1,4 @@
-ARG PHP_VERSION=7
+ARG PHP_VERSION
 FROM mcr.microsoft.com/vscode/devcontainers/php:dev-${PHP_VERSION}
 
 # [Option] Install zsh
