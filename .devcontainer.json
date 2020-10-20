@@ -7,7 +7,7 @@
     "workspaceFolder": "/var/www",
 
 	"containerEnv": {
-		"PHP_VERSION": 7.4,
+		"PHP_VERSION": "7.4",
 		"MY_CONTAINER_VAR2": "${localEnv:localWorkspaceFolder}",
 		"MY_CONTAINER_VAR3": "${localWorkspaceFolder}"
 	},
