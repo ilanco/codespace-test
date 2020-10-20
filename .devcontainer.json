@@ -7,11 +7,12 @@
     "workspaceFolder": "/var/www",
 
 	"containerEnv": {
-		"MY_CONTAINER_VAR": "some-value-here",
+		"PHP_VERSION": 7.4,
 		"MY_CONTAINER_VAR2": "${localEnv:localWorkspaceFolder}",
 		"MY_CONTAINER_VAR3": "${localWorkspaceFolder}"
 	},
 	"remoteEnv": {
+		"PHP_VERSION": "${containerEnv:PHP_VERSION}",
 		"PATH": "${containerEnv:localWorkspaceFolder}:/some/other/path",
 		"MY_REMOTE_VARIABLE": "some-other-value-here",
 		"MY_REMOTE_VARIABLE2": "${localEnv:localWorkspaceFolder}"
